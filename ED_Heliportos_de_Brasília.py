@@ -5,7 +5,7 @@
 # Construção do DataFrame
 """
 
-# Criando DataFrame com localização e nome dos 16 heliportos de Brasília
+# Criando DataFrame com localização e nome dos 14 heliportos de Brasília
 
 # Importando a biblioteca pandas
 import pandas as pd
@@ -102,18 +102,20 @@ dados_heli = {
 # Transformando o dicionário "dados_heli" em um DataFrame chamado "df_heliportos"
 df_heliportos = pd.DataFrame(data = dados_heli)
 
-"""# Apresente em tela (output) toda a base de dados."""
+"""# Realizando operações com o DataFrame."""
+
+"""# Operação 1: Apresente em tela (output) toda a base de dados."""
 
 # Método display para a apresentação dos gerais do DataFrame
 print("A seguir, a presentação do DataFrame:\n")
 display(df_heliportos)
 
-"""# Apresente o tamanho do seu dataframe (quantas colunas x linhas)."""
+"""# Operação 2: Apresente o tamanho do seu dataframe (quantas colunas x linhas)."""
 
 # Printando na tela utilizando a formatação para apresentar as linhas e colunas entre uma String
 print(f"Apresentando a proporção do DataFrame usando método 'shape':\nO DataFrame tem {df_heliportos.shape[0]} linhas e {df_heliportos.shape[1]} colunas.")
 
-"""# Acesse a linha (x) e apresente em tela todas as características do item."""
+"""# Operação 3: Acesse a linha (x) e apresente em tela todas as características do item."""
 
 print("Acessando e apresentando em tala todas as informações da linha (x):\n")
 
@@ -144,7 +146,7 @@ else:
 # Indicando o fim da pesquisa
 print("\nEncerrando pesquisa...")
 
-"""# Verifique se o dataframe está vazio."""
+"""# Operação 4: Verifique se o dataframe está vazio."""
 
 # Se o DataFrame não estiver vazio...
 if (df_heliportos.empty) == False:
@@ -153,13 +155,13 @@ if (df_heliportos.empty) == False:
 else:
   print('Está vazia') # ...informa ao usuário que está vazio
 
-"""# Apresente em tela os 5 primeiros registros da base de dados."""
+"""# Operação 5: Apresente em tela os 5 primeiros registros da base de dados."""
 
 print("Apresentando os 5 primeiras linhas do DataFrame usando método 'head':\n")
 # Usando o método head para apresentar um cabeçalho das cinco primeiras linhas de dado
 display(df_heliportos.head(5))
 
-"""# Exclua um item (linha) de sua base de dados."""
+"""# Operação 6: Exclua um item (linha) de sua base de dados."""
 
 # Deletando a quinta linha do DataFrame
 df_heliportos=df_heliportos.drop(4)
@@ -168,7 +170,7 @@ print("Linha 4 deletada usando o método 'drop():'\n")
 # Apresentando o DataFrame sem a linha de index 4
 display(df_heliportos)
 
-"""# Adicione um item (linha) na sua base de dados."""
+"""# Operação 7: Adicione um item (linha) na sua base de dados."""
 
 # Adicionando novos dados no index 4 do DataFrame
 df_heliportos.loc[4] = ['Heliponto Parque Cidade', 'SCS Q. 6 BL A - Asa Sul, Brasília - DF', '70.740-610', 'Privado', '07:00']
@@ -177,33 +179,33 @@ print("DataFrame com as informações da linha 4 deletada adicionada novamente:\
 # Apresentando na tela o DataFrame atualizado
 display(df_heliportos)
 
-"""# Transponha a coluna para a linha em sua base de dados."""
+"""# Operação 8: Transponha a coluna para a linha em sua base de dados."""
 
 print("DataFrame com transposição usando o método 'transpose()':\n")
 # Apresentando o DataFrame transposto
 display(df_heliportos.transpose())
 
-"""# Apresente em tela somente a 1ª e a 2ª coluna (rótulo) da base de dados."""
+"""# Operação 9: Apresente em tela somente a 1ª e a 2ª coluna (rótulo) da base de dados."""
 
 print("Apresentando apenas até a 2º coluna do DataFrame usando o código 'iloc' e definindo o limite de colunas:\n")
 # Usando método iloc para definir o limite de amostragem das colunas, definida como 2
 display(df_heliportos.iloc[: ,:2])
 
-"""# **Informe como foi desenvolvido o Projeto.**
+"""# **Informando como foi desenvolvido o Projeto.**
 
 
 Utilizando a linguagem de programação python, importei a biblioteca pandas e iniciei o dicionário 'dados_heli'. Adicionei informações existentes nas listas: heliporto, localizacao, CEP, categoria e horário de pico com informações referentes ao nome e localização dos heliportos. Após isso, criei um DataFrame a partir dos dados do dicionário;
 
-**Questão 1:**
+**Operação 1:**
 
 *   Utilizei o "display(df_heliportos)" para mostrar toda a tabela da base de dados de forma mais atrativa ao usuário.
 
 
-**Questão 2:**
+**Operação 2:**
 *   utilizei "df_heliportos.shape", função que mostra as proporções do DataFrame, printei na tela usando a formatação no código "print()" para uma melhor visualização para o usuário.
 
 
-**Questão 3:**
+**Operação 3:**
 
 *   Criei uma variável(indecs) que vai receber o valor convertido para inteiro de uma input onde o usuário vai digitar um determinado valor;
 *   Usei as estruturas de decisão(if e else) para verificar se o valor inteiro digitado pelo usuário é menor que 0 ou se é maior que a quantidade de instâncias do DataFrame, o que indica um valor inválido;
@@ -212,29 +214,29 @@ Utilizando a linguagem de programação python, importei a biblioteca pandas e i
 *   Por fim, pritei na tela as colunas e os valores de forma organizada.
 
 
-**Questão 4:**
+**Operação 4:**
 *   Fiz o uso dos comandos de decisão(if e else) para checar se o DataFrame está vazio ou não, a depender do resultado, o código pode apresentar pro usuário diferentes resultados da checagem. Nesse caso, como o DataFrame está populado de dados, vai apresentar que a tabela não está vazia;
 
 
-**Questão 5:**
+**Operação 5:**
 
 *   "df_heliportos.head(5)" código responsável por apresentar apenas as informações das 5 primeiras instâncias do DataFrame(indo da linha 0 até 4);
 
 
-**Questão 6:**
+**Operação 6:**
 
 *   "df_heliportos.drop(4)" para excluir a instância de index = 4 do DataFrame;
 
 
-**Questão 7:**
-*   "df_heliportosf.loc[4] = [informações a serem inseridas]" para adicionar os dados a serem inseridos no DataFrame especificamente no index 4, o mesmo que foi excluído na questão de número 6. Usei os mesmos dados da instância excluída;
+**Operação 7:**
+*   "df_heliportosf.loc[4] = [informações a serem inseridas]" para adicionar os dados a serem inseridos no DataFrame especificamente no index 4, o mesmo que foi excluído na Operação de número 6. Usei os mesmos dados da instância excluída;
 
 
-**Questão 8:**
+**Operação 8:**
 *   A função "df_heliportos.transpose()" já faz todo o trabalho de transposição das linhas e colunas, realizando a sua reorganização posicionando as colunas no lugar das linhas e as linhas no lugar das colunas;
 
 
-**Questão 9:**
+**Operação 9:**
 *   "df_heliportos.iloc[:, :2]" método iloc para selecionar o limite de amostragem das linhas e colunas do DataFrame. No caso atual, está configurado para mostrar todas as linhas e as duas primeiras colunas do DataFrame original.
 
 **Bibliografia:**
